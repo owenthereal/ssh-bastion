@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  ssh-bastion:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-05-11T15:02:12.665777-07:00"
+    description: A Helm chart for Kubernetes
+    digest: d550069b387a5bc2b088d050fab99b0cb5cdd29cf4fb90f02750f3ed5a7d4b37
+    name: ssh-bastion
+    type: application
+    urls:
+    - ssh-bastion-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-05-11T15:02:12.665042-07:00"
