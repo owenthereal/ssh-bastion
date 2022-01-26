@@ -3,12 +3,12 @@ entries:
   ssh-bastion:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-11T15:02:12.665777-07:00"
+    created: "2022-01-26T09:23:00.55734-08:00"
     description: A Helm chart for Kubernetes
-    digest: d550069b387a5bc2b088d050fab99b0cb5cdd29cf4fb90f02750f3ed5a7d4b37
+    digest: a32465d9f0cce9349a07f167a2c13d74a592aaabd1e2286c57dcd99e8004101f
     name: ssh-bastion
     type: application
     urls:
     - ssh-bastion-0.1.0.tgz
     version: 0.1.0
-generated: "2021-05-11T15:02:12.665042-07:00"
+generated: "2022-01-26T09:23:00.556735-08:00"
