@@ -27,6 +27,13 @@ spec:
       serviceAccountName: {{ include "ssh-bastion.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      {{- if .Values.sshConfig.forwardingEnabled }}
+      volumes:
+        - name: ssh-config-script
+          configMap:
+            name: ssh-config-script
+            defaultMode: 0777
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -50,6 +57,12 @@ spec:
               port: 2222
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{- if .Values.sshConfig.forwardingEnabled }}
+          volumeMounts:
+            - name: ssh-config-script
+              mountPath: /etc/cont-init.d/88-enable_forwarding
+              subPath: 88-enable_forwarding
+          {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
